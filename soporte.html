@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <style type="text/css">
+        /*formatação da caixa de pesquisa*/
+        label {
+            color: #ff00ff;
+            font-weight: bold;
+
+
+        }
+
+        .bt {
+            background-color: #c00000;
+            /*cores e fundo do botao*/
+            color: #f0f0f0;
+            width: 75px;
+            height: 25px;
+            border: 0px;
+            cursor: pointer;
+
+
+        }
+
+        input:hover,
+        select:hover,
+        textarea:hover {
+            border: 2px solid #00ff00;
+            /*colocar borda*/
+        }
+
+        input:focus,
+        textarea:focus {
+            background-color: #ff00ff;
+        }
+
+        /*mudar cor quando esta selecionado*/
+    </style>
+</head>
+
+<body>
+    <form name="f_aula" method="post" action="">
+        <!--barra de fromulario e pesquisa-->
+        <label>nome:</label><br />
+        <!--nome-->
+        <input type="text" name="f_nome" size="40" maxlength="30" /><br /><br />
+        <label>senha</label><br />
+        <input type="password" name="f_senha" size="40" maxlength="20"><br /><br /><br />
+        <label>comentario</label><br />
+        <textarea name="f_comentario" cols="45" rows="5"></textarea><br /><br />
+        <!--caixa de texto-->
+        <input type="submit" class="bt" value="enviar">
+        <!--botao enviar-->
+        <input type="reset" class="bt" value="limpar">
+        <!--botao para limpar caixas marcadas-->
+
+    </form>
+</body>
+
+</html>

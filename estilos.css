@@ -9,6 +9,13 @@ body {
     left: 0px;
     width: 150px;
 }
+#btsoporte {
+    position: absolute;
+    top: 300px;
+    left: 3660px;
+    width: 160px;
+    height: 160px;
+}
 
 #btModulos {
     position: absolute;
