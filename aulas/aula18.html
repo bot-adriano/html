@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <title>js aula1</title>
+    <script language="javascript">/*java script não formata, tem q ser feito por css ou htmal*/
+        /*        var nome = "jao pe de feijao";
+                var idade = 0;
+                var anoNasc = 2000;
+                var anoAtual = 1984;
+                document.write("<span style='color:#ff00ff; font-size:30px'> aula 1 de java script</span><br />");
+                document.write("<span style='color:#0000ff; font-size:30px'>ola seja bem vindo " + nome + "</span><br/>");
+                idade = anoAtual - anoNasc;
+                document.write("<span style='color:#005588; font-size:30px;'> idade: " + idade)*/
+        function abrepg(link) {
+            window.location.href = link;/*este comando é para reconhecer o comando link da funcao abrepg*/
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <select name="lista" size="6" onchange="abrepg(value)">
+        <!--colocando size 6 a tela fica maior e nao fica parecendo aquele botao pra escolher e on 
+            change é pra chamar a pagina e a funcao value chama a value do option-->
+        <option value="https://www.kabum.com.br/hardware">hardware</option>
+        <option value="https://www.kabum.com.br/perifericos">perifericos</option>
+        <option value="https://www.kabum.com.br/gamer">gamer</option>
+
+
+
+
+
+
+    </select>
+</body>
+
+</html>
