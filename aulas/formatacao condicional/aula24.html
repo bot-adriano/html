@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <title> aula12-javascript scrip </title>
+    <script language="javascript">
+        function formatar() {
+            var tabela = document.getElementById('tb_produtos');/*pega as tabelas*/
+            var nlin = tabela.getElementsByTagName('tr');/*pega as linhas*/
+
+            for (l = 1; l < nlin.length; l++) {/*varremos as linhas e colunas para ver se o valor é menor que 50*/
+                var ncol = nlin[l].getElementsByTagName('td');
+                if (ncol[1].firstChild.nodeValue <= 50) {
+                    nlin[l].style.backgroundColor = "#ffaaaa";
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body onload="formatar()">
+    <table width="450" border="1" cellspacing="0" cellpading="0" id="tb_produtos">
+        <tr bgcolor="#cccccc" id="cabecalho">
+            <td align="center"><strong>produto</strong></td>
+            <td align="center"><strong>quantidade</strong></td>
+            <td align="center"><strong>valor</strong></td>
+        </tr>
+        <tr id="linha1">
+            <td>mouse</td>
+            <td>100</td>
+            <td>250,00</td>
+
+        </tr>
+        <tr id="linha2">
+            <td>teclado</td>
+            <td>80</td>
+            <td>30,00</td>
+        </tr>
+        <tr id="linha3">
+            <td>monitor</td>
+            <td>85</td>
+            <td>3300,00</td>
+
+        </tr>
+        <tr id="linha4">
+            <td>cpu</td>
+            <td>30</td>
+            <td>450,00</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
