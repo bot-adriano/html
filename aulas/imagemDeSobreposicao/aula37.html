@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>aula37</title>
+    <script text="text/javascript">
+        function preload() {/*criamos a funcao pre load pra carregar as imagens mais rapido*/
+            imgs = array('./img/boleto-simbolo.png', './img/b2.png', './img/WhatsApp-icone.png');
+            /*esse eh pra pre carregar a imagem e nao demorar a aparecer*/
+            imgqtde = imgs.length;/*variavel pra controlar o tamanho do array*/
+            for (i = 0; i < imgqtd; i++) {
+                var preloading = new image();
+                preloading.src = imgs[i];
+            }/*pra carregar as imagens */
+        }
+        function troca(obj, imgtroca) {/*função que faz a troca*/
+            obj.src = imgtroca;
+        }
+
+
+    </script>
+</head>
+
+<body onload="preload()">
+    <!--aqui colocamos afuncao onload preload pra carrgar oq declaramos la em cima-->
+    <img src="./img/boleto-simbolo.png" alt="bt1" onmouseover="troca(this,'./img/b2.png')">
+    <!--aqui podemos tranformar os botoes em links usando <a> ou href-->
+    onmouseout="troca(this,'./img/boleto-simbolo.png')" />
+    <img src="./img/WhatsApp-icone.png" alt="bt2" onmouseover="troca(this,'./img/b2.png')"
+        onmouseout="troca(this,'./img/d.png')" />
+    <img src="./img/Sem título-2.jpg" alt="bt3">
+</body>
+
+</html>
