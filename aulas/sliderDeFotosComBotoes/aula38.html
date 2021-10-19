@@ -18,6 +18,7 @@
         carregafoto("./img/1.jpg");/*o seguimentodo nome da foto é importante estar em sequencia e chamamos a 1* foto*/
         document.getElementById("moldura").addEventListener("transitionend", fimtr);
         /*este comando escuta o fim da transição e acionar a função fimtr que passa a variavel tr para true de novo*/
+        tmr = setInterval(trocafoto, 4000);/*comando para colocar a foto pra trocar automatico, os 4000 representa 4 milisegundos */
     }
     function fimtr() {
         tr = true;/*aqui ele modifica a variavel para true e possibilita a mudanca de slide*/
@@ -28,31 +29,64 @@
         document.getElementById("moldura").style.backgroundImage = "URL(" + foto + ")";/*backgroundimage vai chamar o parametro fotoda funcao*/
 
     }
-    function prox() {/*funcao para trocar de foto*/
-        if (tr) {/*aqui e no ant colocamos a condição que se for verdadeiro permito a transição*/
-            tr = false;/* esta variavel trava para nao pular a transicao*/
-            fi++;/*aqui ele vai aumentar pra proxima foto*/
-            if (fi > max) {/*este comando é para dar o looping quando chegar ao final da foto*/
-                fi = min;
-            }
 
+    function trocafoto() {/*função criada para trocar a foto automatica*/
+        tr = false;
+        fi++;
+        if (fi > max) {
+            fi = min;
         }
         carregafoto("./img/" + fi + ".jpg");
-
-
-
     }
-    function ant() {/*funcao para trocar de foto*/
+
+
+
+
+
+    // function prox() {/*funcao para trocar de foto*/
+    //  clearInterval(tmr);/*comando pra dar o clear no tempo da contagem do giro automatico*/
+    //  if (tr) {/*aqui e no ant colocamos a condição que se for verdadeiro permito a transição*/
+    //     tr = false;/* esta variavel trava para nao pular a transicao*/
+    //     fi++;/*aqui ele vai aumentar pra proxima foto*/
+    //      if (fi > max) {/*este comando é para dar o looping quando chegar ao final da foto*/
+    //          fi = min;
+    //      }
+    //      carregafoto("./img/" + fi + ".jpg");
+
+    //  }
+    //  tmr = setInterval(trocafoto, 4000);/*aqui teremos que iniciar  acontagem do tempo para trocar a foto automatica de novo*/
+
+
+
+
+    //  }
+
+    // function ant() {/*funcao para trocar de foto*/
+    //    clearInterval(tmr);
+    //   if (tr) {
+    //       tr = false;
+    //       fi--;/*aqui ele vai voltar pra proxima foto*/
+    //       if (fi < min) {/*este comando é para dar o looping quando chegar ao final da sequencia  da foto*/
+    //          fi = max;
+    //       }
+    //     carregafoto("./img/" + fi + ".jpg");
+    //   }
+    //   tmr = setInterval(trocafoto, 4000);
+
+
+    //  }
+    /*podemos deixar apenas um menu no lugar de  prox e ant*/
+    function troca(dr) {
+        clearInterval(tmr);
         if (tr) {
             tr = false;
-            fi--;/*aqui ele vai voltar pra proxima foto*/
-            if (fi < min) {/*este comando é para dar o looping quando chegar ao final da sequencia  da foto*/
+            fi += dr;
+            if (fi > max) {
+                fi = min;
+            } if (fi < min) {
                 fi = max;
-            }
-            carregafoto("./img/" + fi + ".jpg");
-        }
-
-
+            } carregafoto("./img/" + fi + ".jpg");
+        } tmr = setInterval(trocafoto, 4000);
     }
 
 </script>
@@ -72,8 +106,10 @@
 <body onload="iniciaslider()">
     <!--aqui chamamos a funcao onload pra chamar a funcao inicializarslider-->
     <div id="moldura"></div>
-    <input type="button" value="anterior" onclick="ant()" />
-    <input type="button" value="proximo" onclick="prox()" />
+    <input type="button" value="anterior" onclick="troca(-1)" />
+    <!--"ant()"-->
+    <input type="button" value="proximo" onclick="troca(1)" />
+    <!--"prox()"-->
 </body>
 </head>
 
