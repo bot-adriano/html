@@ -1,0 +1,80 @@
+<html>
+<title>AULA38 troca por botoes</title>
+<script language="javascript">
+    function preload() {
+        imgs = array('./img/1.jpg', './img/2.jpg', './img/3.jpg', './img/4.jpg', './img/5.jpg', './img/6.jpg');
+        imgqtd = imgs.length;
+        for (i = 0; i < imgqtd; i++) {
+            var preloadimg = new Image();
+            preloadimg.src = imgs[i];
+        }
+    }/*importante colocar o preload de imagem*/
+    function iniciaslider() {/*funcao que inicia todas as variaveis*/
+        // preload();/*aqui chamamos o preload, mas n consegui funcionar acho q talvez seja o endereco da imagem*/
+        max = 6;
+        min = 1;
+        fi = min;/*este comando esta inicializando a função prox*/
+        tr = true;/*comando inicial para n deixar pular a transicao de imagem*/
+        carregafoto("./img/1.jpg");/*o seguimentodo nome da foto é importante estar em sequencia e chamamos a 1* foto*/
+        document.getElementById("moldura").addEventListener("transitionend", fimtr);
+        /*este comando escuta o fim da transição e acionar a função fimtr que passa a variavel tr para true de novo*/
+    }
+    function fimtr() {
+        tr = true;/*aqui ele modifica a variavel para true e possibilita a mudanca de slide*/
+    }
+
+
+    function carregafoto(foto) {  /*funcao que vai fazer o carregamento da imagem na div*/
+        document.getElementById("moldura").style.backgroundImage = "URL(" + foto + ")";/*backgroundimage vai chamar o parametro fotoda funcao*/
+
+    }
+    function prox() {/*funcao para trocar de foto*/
+        if (tr) {/*aqui e no ant colocamos a condição que se for verdadeiro permito a transição*/
+            tr = false;/* esta variavel trava para nao pular a transicao*/
+            fi++;/*aqui ele vai aumentar pra proxima foto*/
+            if (fi > max) {/*este comando é para dar o looping quando chegar ao final da foto*/
+                fi = min;
+            }
+
+        }
+        carregafoto("./img/" + fi + ".jpg");
+
+
+
+    }
+    function ant() {/*funcao para trocar de foto*/
+        if (tr) {
+            tr = false;
+            fi--;/*aqui ele vai voltar pra proxima foto*/
+            if (fi < min) {/*este comando é para dar o looping quando chegar ao final da sequencia  da foto*/
+                fi = max;
+            }
+            carregafoto("./img/" + fi + ".jpg");
+        }
+
+
+    }
+
+</script>
+<style>
+    #moldura {
+        /*aqui montamos o tamanho fundo e transicao da moldura*/
+        width: 600px;
+        height: 450px;
+        background-color: #ff00ff;
+        transition: background-image 2s;
+        /*aplica a transição no caso o background-image*/
+    }
+</style>
+
+<head>
+
+<body onload="iniciaslider()">
+    <!--aqui chamamos a funcao onload pra chamar a funcao inicializarslider-->
+    <div id="moldura"></div>
+    <input type="button" value="anterior" onclick="ant()" />
+    <input type="button" value="proximo" onclick="prox()" />
+</body>
+</head>
+
+</html>
