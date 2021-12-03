@@ -104,8 +104,8 @@
 
 }
 .col-100{
-    left:300px;
-    width: 300%;
+    left:600px;
+    width: 100%;
     position: relative;
     margin-top: 700px;
     /*height: 260px;*/
@@ -184,14 +184,14 @@ li.slick-active button{/*fundo do botao do painel*/
 
 }
 .texto-destaque h1{
-    color: rgb(121, 2, 41);
+    color: rgb(0, 0, 0);
 }
 .texto-destaque p {
-    color: #1e00a5;
+    color: #0031a5;
 }.col-3{
     display:inline-block;
     margin-left: 105px;
-    border: 5px solid #e78a11;  
+    border: 5px solid #d9e711;  
     width: 1000px;
     height: 950px;
   
