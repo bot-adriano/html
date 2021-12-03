@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!--<html lang="pt-br">
+
+<head>
+    <title>aula1 java variaveis script</title>
+    <meta charset="utf-8" />
+    <script>
+        var canal = "casa do jão";//para criar variaveis tem q inicializar o var
+        var num = 2021;
+        var site;//não podemos comecar nome de variaveis com numeros, funcoes
+        curso = "é um mané";//se declarar  o valor na variavel não é necessario colocar o var, mas é indicado o uso
+        var texto = canal + num + "<br>" + canal;//podemos fazer operações e concatecnações criando uma nova variavel
+        document.write(texto);
+        var curso = canal + "<br>" + (num + 45);//dessa forma ele faz oq esta nos parenteses primeiro e depois concatena
+        document.write(curso);
+        // ou podemos declarar tudo junto
+        // var canal, nome, site;
+        // document.write(canal)//document.write()imprime o valor da variavel
+        document.write(canal + "<br>" + num + "<br>" + curso)//para colocar mais de uma variavel podemos concatenar
+
+    </script>
+</head>
+
+</html>
+<html>
+
+<head>
+    <title>aula 03 constantes</title>
+    <meta charset="utf-8" />
+    <script>
+        const canal = "curso do jao"//quando se declara constante o valor não pode ser mudado
+        //document.write(Math.PI) tem alguns que ja tem a constante difinida igual o numero de PI na biblioteca matematica
+
+    </script>
+</head>
+
+</html>
+<html>
+
+<head>
+    <title>13 array</title>
+    <meta charset="utf-08">
+    <script>
+        /*   //var cor=new Array();podemos iniciar assim tb
+           var cor = []//quando colocamos o [] o js ja reconhece que é um array e array sempre começa com indice 0
+           cor.push("preto");//.push colocar valor dentro  da variavel
+           cor.push("azul");
+           cor[2] = "amarelo";//podemos fazer assim tb
+           cor[3] = "branco";
+           cor.push("rosa");
+           document.write(cor[0] + "<br>");//pra chamar o indice aqui colocarmos a variavel e dentro dos parenteses o indice
+           document.write(cor[2]);*/
+        var itens = ["faca", "pederneira", "corda", "lanterna", "luvas", "chave", "arame"];//podemos declarar tudo junto tb
+        var mochila = [];
+        // mochila.push(2]);// aqui indico um indice relacionado ao elemento ou o proprio elemento** foi feito um push nessa 
+        //mochila com o elemento do vetor 2 que é a corda
+        // document.write(mochila[0]);//aqui chamamos a mochila na posição 0 no array mochila que é a corda
+        // mochila.push(2); 
+        //  document.write(mochila[0]]);dessa forma estamos invertendo a logica, chamamos o itens depois indicamos amochila 
+        //na posicao 0 da mochila
+        mochila.push(5);
+        mochila.push(0);
+        mochila.push(3);
+        document.write(mochila[0]] + "<br>");
+        document.write(mochila[1]] + "<br>");
+        document.write(mochila[2]] + "<br>");
+
+
+
+    </script>
+</head>
+
+</html>
+<html>
+
+<head>
+    <title>aula 14 array parte 2</title>
+    <meta charset="utf-8">
+    <script>
+
+        var mochila = [];
+        mochila.push("faca");
+        mochila.push("corda");
+        mochila.push("pederneira");
+        mochila.push("chave");//push insere no final do array
+        mochila.push("lanterna");
+        mochila.unshift("pedra");//unshift insere no inicio do array
+        //mochila.pop();//retira o ultimo indice do array
+        //  mochila.pop();//assim vai retirar o novamente o ultimo indice do array
+        //  mochila.shift();//.shifit remove o primeiro indice
+        mochila.splice(2, 1);//ele permite remover quantos elementos quisermos, basta iniciar de onde iniciar
+        mochila.splice(2, 1);
+        document.write(mochila[0] + "<br>");
+        document.write(mochila[1] + "<br>");
+        document.write(mochila[2] + "<br>");
+        document.write(mochila[3] + "<br>");
+        document.write(mochila[4] + "<br>");
+        document.write(mochila[5] + "<br>");
+    </script>
+</head>
+
+</html>
+
+<html>
+
+<head>
+    <title>aula 15 array</title>
+    <meta charset="utf-8">
+    <script>
+        var mochila = [], mochila1 = [], mochila2 = [], pos;
+        /*var num = [5, 8, 4, 9, 6, 2, 1, 3, 7, 0];
+        var numeros;
+        num.sort();/*com esta função ele ordena os elementos */
+        /*  num.reverse();/*com esta função ele inverte a ordem, mas ele não ordena soomente inverte a sequencia que esta*/
+        /*  numeros = num.join();//método join junta todas as variaveis em uma só na forma de string** foi atribuido todos os elementos de um array ,
+          // dentro da variavel numeros
+          document.write(numeros + "<br>")
+          document.write(num[0] + "<br>");
+          document.write(num[1] + "<br>");
+          document.write(num[2] + "<br>");
+          document.write(num[3] + "<br>");
+          document.write(num[4] + "<br>");
+          document.write(num[5] + "<br>");
+          document.write(num[6] + "<br>");
+          document.write(num[7] + "<br>");
+          document.write(num[8] + "<br>");
+          document.write(num[9] + "<br>");*/
+
+        mochila1.push("faca");
+        mochila1.push("corda");
+        mochila1.push("pederneira");
+        mochila1.push("chave");
+        mochila1.push("lanterna");
+
+        mochila2.push("pao");
+        mochila2.push("carne");
+        mochila2.push("batata");
+        mochila2.push("farinha");
+        mochila2.push("risoles");
+        mochila1.pop();
+        mochila = mochila1.concat(mochila2);
+        //com a função concat conseguimos concatenar a mochila 1 e mochila 2
+
+        document.write(mochila[0] + "<br>");
+        document.write(mochila[1] + "<br>");
+        document.write(mochila[2] + "<br>");
+        document.write(mochila[3] + "<br>");
+        document.write(mochila[4] + "<br>");
+        document.write(mochila[5] + "<br>");
+        document.write(mochila[6] + "<br>");
+        document.write(mochila[7] + "<br>");
+        document.write(mochila[8] + "<br>");
+        document.write(mochila[9] + "<br>");
+
+        document.write("tamanho da mochila 1: " + mochila1.length + "<br>")
+        document.write("tamanho da mochila 2: " + mochila2.length + "<br>")
+        document.write("tamanho da mochila : " + mochila.length + "<br>")
+        //.length coonseguimos ver a quantidade de itens que esta dentro da mochila
+
+
+        pos = mochila.indexOf("lanterna");//mochila.indexOf("lanterna")coamndo indexOf vai verificar se possuimos o elemento lanterna
+        if (pos < 0) {
+            document.write("item não esta na mochila");
+        } else {
+            document.write("item esta na mochila<br>posição: " + pos);
+        }
+
+    </script>
+</head>
+
+</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<title>aula 16 matriz</title>
+<meta charset="utf-8">
+<script>
+    var mochila = new Array();
+    var item1 = ["corda", 2],// aqui vamos criar o item 1 e a qtdade de itens que tenho
+        item2 = ["faca", 1],
+        item3 = ["cura", 5],
+        item4 = ["prego", 35];
+
+    mochila.push(item1);//aqui vamos adicionar os itens na mochila
+    mochila.push(item2);
+    mochila.push(item3);
+    mochila.push(item4);
+    document.write(mochila[0][0] + "-" + mochila[0][1] + "<br>");//a mochila esta sendo controlada por 2 indices
+    document.write(mochila[1][0] + "-" + mochila[1][1] + "<br>");
+    document.write(mochila[2][0] + "-" + mochila[2][1] + "<br>");
+    document.write(mochila[3][0] + "-" + mochila[3][1] + "<br>");
+
+</script>
+
+</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>aula 17 incremento e decremento de variaveis</title>
+    <meta charset="utf-8" />
+    <script>
+        var num = 10;
+        num--;
+        document.write(num);
+    </script>
+</head>
+
+</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>aula 18 comando loop for</title>
+    <meta charset="utf-8">
+    <script>
+        /* var num = [];
+ 
+         for (cont = 0; cont < 5; cont++) {
+             num.push(prompt("digite qualquer coisa", ""));
+             // num.push ele coloca valor no  num e o prompt ele captura esse valor do usuario
+         }
+         for (cont = 0; cont < 5; cont++) {
+             document.write(num[cont] + "<br>");
+         }
+ 
+ 
+         for (cont = 0; cont < 10; cont++) {
+             document.write("vai que da <br>")
+         }*/
+        var mochila = [["corda,1"], ["cura,10"], ["lanterna,1"], ["pilhas,20"], ["batata,3"]];
+        for (var l = 0; l < 5; l++) {
+            for (var c = 0; c < 2; c++) {//este primeiro for varre o primeiro indice dentro do array mochila
+                document.write(mochila[l][c] + "");//este segundo pega o o segundo indice do array mochila
+            }
+            document.write("<br>");
+        }
+    </script>
+</head>
+
+</html>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>aula 19 comandoloop while</title>
+    <meta charset="pt-br">
+    <script>
+        var num;
+        num = 0;
+        while (num < 10) {
+            document.write(num + "<br>");
+            num++;
+        }
+        document.write("<hr>");
+
+        num = 10;
+        while (num--) {
+            document.write(num + "<br>");
+
+        }
+        document.write("<hr>");
+        num = true;
+        cont = 0;
+        while (num) {
+            document.write("não é o joao <br>");
+            cont++;
+            if (cont > 9) {
+                num = false; 
+                //dessa forma usamos o true e o false no while,e o "IF" com o cont para fazer o comando parar
+            }
+        }
+    </script>
+</head>
+
+</html>-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>aula 21 comando loop do wuhile</title>
+    <meta charset="pt-br">
+    <script>
+        var num = 10;
+               
+           
+           }
+
+    </script>
+</head>
+
+</html>
